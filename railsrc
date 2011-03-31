@@ -1,9 +1,22 @@
-#!/usr/bin/ruby
+#!/usr/bin/env ruby
+
+# figure out gem path from environment var (GEM_PATH) set by rvm
+# then manually add gem paths to $LOAD_PATH, otherwise we'd have
+# to add things like hirb to Rails project's Gemfile in order to
+# use them
+#
+(ENV['GEM_PATH'] || "" ).split(':').each do |root|
+  Dir[File.join(root, 'gems', '*')].each do |gem_root|
+    path = File.join(gem_root, 'lib')
+    $LOAD_PATH.unshift(path) unless $LOAD_PATH.include?(path)
+  end
+end
 
 begin
   require 'hirb' # sudo gem install cldwalker-hirb --source http://gems.github.com
   Hirb.enable
 rescue LoadError
+  puts "some module isn't loaded"
 end
 
 def change_log(stream)
