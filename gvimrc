@@ -1,7 +1,6 @@
-if has("win32")
-  set directory=$TEMP
-  set backupdir=$TEMP
-endif
+" .gvimrc is not read until all plugins have been loaded, by which time all the mappings
+" have already been created with the default map leader.  .gvimrc is intended only for 
+" GUI-specific options, everything else should be in .vimrc
 
 if has("win32")
     set guifont=monaco:h11
@@ -21,11 +20,6 @@ if has("gui_macvim")
   macmenu Window.Toggle\ Full\ Screen\ Mode key=<nop>
   map <D-F> :Ack<space>
 
-  " Command-e for ConqueTerm
-  map <D-e> :call StartTerm()<CR>
-
-  " Command-/ to toggle comments
-  map <D-/> <plug>NERDCommenterToggle<CR>
 endif
 
 " Start without the toolbar
@@ -41,12 +35,6 @@ map <Leader>p "*p
 
 " Default gui color scheme
 color jellybeans
-
-" ConqueTerm wrapper
-function StartTerm()
-  execute 'ConqueTerm ' . $SHELL . ' --login'
-  setlocal listchars=tab:\ \ 
-endfunction
 
 " Project Tree
 autocmd VimEnter * call s:CdIfDirectory(expand("<amatch>"))

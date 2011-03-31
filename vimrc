@@ -29,13 +29,18 @@ let Tlist_Enable_Fold_Column = 0
 
 syntax on
 
-if has("win32")
-  set directory=$TEMP
-  set backupdir=$TEMP
-  set list listchars=tab:\ \ ,trail:·
-elseif has("mac")
-  set list listchars=tab:\ \ ,trail:·
-endif
+set nobackup
+set nowritebackup
+set noswapfile
+
+
+" if has("win32")
+"   set directory=$TEMP
+"   set backupdir=$TEMP
+"   set list listchars=tab:\ \ ,trail:·
+" elseif has("mac")
+"   set list listchars=tab:\ \ ,trail:·
+" endif
 
 " Whitespace stuff
 set nowrap
