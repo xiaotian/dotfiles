@@ -89,6 +89,7 @@ let g:user_zen_settings = {
 \ 'indentation' : '  '
 \}
 
+nmap <silent> <leader>b :MRU<CR>
 
 " Quickly edit/reload the vimrc file
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
