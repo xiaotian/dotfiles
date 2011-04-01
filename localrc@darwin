@@ -1,0 +1,4 @@
+export CLICOLOR=1
+export LSCOLORS=gxfxcxdxbxegedabagacad
+export PATH=./:$PATH
+export PATH=/opt/local/bin:/opt/local/sbin:$PATH
