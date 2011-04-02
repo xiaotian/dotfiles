@@ -1,0 +1,9 @@
+
+#auto list source on each stop
+set autolist
+
+#auto eval unrecognized command
+set autoeval
+
+#auto reload changed source
+set autoreload
