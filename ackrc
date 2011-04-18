@@ -1,0 +1,6 @@
+--type-add
+ruby=.haml
+--type-add
+html=.haml
+--type-add
+css=.sass,.scss
