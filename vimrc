@@ -6,12 +6,11 @@ set history=1000
 set undolevels=1000
 
 set wildignore=*.swp,*.bak,*.pyc,*.class
-
+set wildignore+=/public/system/**
 set visualbell "don't beep
 set noerrorbells "don't beep
 
 set tags=./tags;
-
 
 let Tlist_Show_One_File = 1
 let Tlist_Use_Right_Window = 1
@@ -33,15 +32,6 @@ set nobackup
 set nowritebackup
 set noswapfile
 
-
-" if has("win32")
-"   set directory=$TEMP
-"   set backupdir=$TEMP
-"   set list listchars=tab:\ \ ,trail:·
-" elseif has("mac")
-"   set list listchars=tab:\ \ ,trail:·
-" endif
-
 " Whitespace stuff
 set nowrap
 if has("win32")
@@ -55,6 +45,7 @@ else
 endif
 
 set expandtab
+set list listchars=tab:\ \ ,trail:·
 
 " folding settings
 
