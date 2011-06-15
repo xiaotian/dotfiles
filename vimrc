@@ -28,12 +28,12 @@ let Tlist_Enable_Fold_Column = 0
 
 syntax on
 
+"set nowrap
 set nobackup
 set nowritebackup
 set noswapfile
 
 " Whitespace stuff
-set nowrap
 if has("win32")
   set tabstop=4
   set shiftwidth=4
