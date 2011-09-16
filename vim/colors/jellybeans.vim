@@ -288,9 +288,9 @@ endfun
 " }}}
 
 if version >= 700
-  call s:X("CursorLine","","1c1c1c","","","")
-  call s:X("CursorColumn","","1c1c1c","","","")
-  call s:X("MatchParen","ffffff","80a090","bold","","")
+  call s:X("CursorLine","","3F3F3F","","","")
+  call s:X("CursorColumn","","3F3F3F","","","")
+  call s:X("MatchParen","ffffff","5F5F5F","bold","","")
 
   call s:X("TabLine","000000","b0b8c0","","","Black")
   call s:X("TabLineFill","9098a0","","","","")
@@ -302,16 +302,16 @@ if version >= 700
 endif
 
 call s:X("Visual","","404040","","","")
-call s:X("Cursor","","b0d0f0","","","")
+call s:X("Cursor","000000","FFFFFF","","","")
 
-call s:X("Normal","e8e8d3","151515","","White","")
-call s:X("LineNr","605958","151515","none","Black","")
+call s:X("Normal","e8e8d3","252525","","White","")
+call s:X("LineNr","605958","252525","none","Black","")
 call s:X("Comment","888888","","italic","Grey","")
 call s:X("Todo","808080","","bold","","")
 
-call s:X("StatusLine","f0f0f0","444444","","","")
-call s:X("StatusLineNC","a0a0a0","444444","","","")
-call s:X("VertSplit","444444","444444","","","")
+call s:X("StatusLine","f0f0f0","666666","","","")
+call s:X("StatusLineNC","a0a0a0","666666","","","")
+call s:X("VertSplit","666666","666666","","","")
 
 call s:X("Folded","a0a8b0","384048","italic","black","")
 call s:X("FoldColumn","a0a8b0","384048","","","")
@@ -335,13 +335,13 @@ call s:X("PreProc","8fbfdc","","","LightBlue","")
 hi link Operator Normal
 
 call s:X("Type","ffb964","","","Yellow","")
-call s:X("NonText","808080","151515","","","")
+call s:X("NonText","808080","252525","","","")
 
 call s:X("SpecialKey","808080","343434","","","")
 
 call s:X("Search","f0a0c0","302028","underline","Magenta","")
 
-call s:X("Directory","dad085","","","","")
+call s:X("Directory","BADA55","","","","")
 call s:X("ErrorMsg","","902020","","","")
 hi link Error ErrorMsg
 
