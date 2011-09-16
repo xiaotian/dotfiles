@@ -288,8 +288,8 @@ endfun
 " }}}
 
 if version >= 700
-  call s:X("CursorLine","","1c1c1c","","","")
-  call s:X("CursorColumn","","1c1c1c","","","")
+  call s:X("CursorLine","","3F3F3F","","","")
+  call s:X("CursorColumn","","3F3F3F","","","")
   call s:X("MatchParen","ffffff","5F5F5F","bold","","")
 
   call s:X("TabLine","000000","b0b8c0","","","Black")
