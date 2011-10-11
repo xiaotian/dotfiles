@@ -28,7 +28,7 @@ let Tlist_Enable_Fold_Column = 0
 
 syntax on
 
-"set nowrap
+set nowrap
 set nobackup
 set nowritebackup
 set noswapfile
