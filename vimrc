@@ -90,6 +90,9 @@ nmap <silent> <leader>sv :so $MYVIMRC<CR>
 map <Leader>y "*y
 map <Leader>p "*p
 
+" Allow saving of files as sudo when I forgot to start vim using sudo.
+cmap w!! w !sudo tee > /dev/null %
+
 " NERDTree configuration
 let NERDTreeIgnore=['\.rbc$', '\~$']
 map <Leader>n :NERDTreeToggle<CR>
