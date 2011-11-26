@@ -28,6 +28,9 @@ let Tlist_Enable_Fold_Column = 0
 
 syntax on
 
+call pathogen#infect()
+filetype plugin indent on
+
 set nowrap
 set nobackup
 set nowritebackup
@@ -45,7 +48,7 @@ else
 endif
 
 set expandtab
-set list listchars=tab:\ \ ,trail:·
+set list listchars=tab:\ \ ,trail:.
 
 " folding settings
 
