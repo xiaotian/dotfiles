@@ -1,3 +1,5 @@
+scriptencoding utf-8
+
 set nocompatible
 set number
 set ruler
@@ -28,7 +30,10 @@ let Tlist_Enable_Fold_Column = 0
 
 syntax on
 
-"set nowrap
+call pathogen#infect()
+filetype plugin indent on
+
+set nowrap
 set nobackup
 set nowritebackup
 set noswapfile
@@ -45,7 +50,7 @@ else
 endif
 
 set expandtab
-set list listchars=tab:\ \ ,trail:·
+set list listchars=tab:\ \ ,trail:.
 
 " folding settings
 
@@ -90,10 +95,14 @@ nmap <silent> <leader>sv :so $MYVIMRC<CR>
 map <Leader>y "*y
 map <Leader>p "*p
 
+" Allow saving of files as sudo when I forgot to start vim using sudo.
+cmap w!! w !sudo tee > /dev/null %
+
 " NERDTree configuration
 let NERDTreeIgnore=['\.rbc$', '\~$']
 map <Leader>n :NERDTreeToggle<CR>
 let NERDTreeChDirMode=2
+" let NERDTreeDirArrows=0
 
 "Auto change the directory to the current file I am working on:
 "use nerdtree's auto change instead.
@@ -171,7 +180,7 @@ vmap <C-Down> ]egv
 set modeline
 set modelines=10
 " Default color scheme
-color jellybeans+
+color jellybeans
 
 " Include user's local vim config
 if filereadable(expand("~/.vimrc.local"))
