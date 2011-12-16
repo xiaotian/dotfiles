@@ -1,3 +1,5 @@
+scriptencoding utf-8
+
 set nocompatible
 set number
 set ruler
@@ -100,6 +102,7 @@ cmap w!! w !sudo tee > /dev/null %
 let NERDTreeIgnore=['\.rbc$', '\~$']
 map <Leader>n :NERDTreeToggle<CR>
 let NERDTreeChDirMode=2
+" let NERDTreeDirArrows=0
 
 "Auto change the directory to the current file I am working on:
 "use nerdtree's auto change instead.
@@ -177,7 +180,7 @@ vmap <C-Down> ]egv
 set modeline
 set modelines=10
 " Default color scheme
-color jellybeans+
+color jellybeans
 
 " Include user's local vim config
 if filereadable(expand("~/.vimrc.local"))
