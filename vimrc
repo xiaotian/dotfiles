@@ -180,7 +180,8 @@ vmap <C-Down> ]egv
 set modeline
 set modelines=10
 " Default color scheme
-color jellybeans
+" color jellybeans
+color colorsponge
 
 " Include user's local vim config
 if filereadable(expand("~/.vimrc.local"))
