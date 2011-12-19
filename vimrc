@@ -6,7 +6,7 @@ set ruler
 set hidden
 set history=1000
 set undolevels=1000
-
+set mouse=a
 set wildignore=*.swp,*.bak,*.pyc,*.class
 set wildignore+=/public/system/**
 set visualbell "don't beep
