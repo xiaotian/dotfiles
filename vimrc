@@ -11,6 +11,7 @@ set wildignore=*.swp,*.bak,*.pyc,*.class
 set wildignore+=/public/system/**
 set visualbell "don't beep
 set noerrorbells "don't beep
+set cpoptions+=$
 
 set tags=./tags;
 
