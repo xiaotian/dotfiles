@@ -67,3 +67,6 @@
 [submodule "vim/bundle/color-sample-pack"]
 	path = vim/bundle/color-sample-pack
 	url = https://github.com/vim-scripts/Color-Sampler-Pack.git
+[submodule "vim/bundle/vim-rspec"]
+	path = vim/bundle/vim-rspec
+	url = https://github.com/skwp/vim-rspec.git
