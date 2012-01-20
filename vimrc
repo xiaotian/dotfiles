@@ -107,6 +107,11 @@ map <Leader>n :NERDTreeToggle<CR>
 let NERDTreeChDirMode=2
 " let NERDTreeDirArrows=0
 
+" vim-rspec configuration
+map <Leader>rf :RunSpec<CR>
+map <Leader>rl :RunSpecLine<CR>
+map <Leader>rd :RunSpecs<CR>
+
 "Auto change the directory to the current file I am working on:
 "use nerdtree's auto change instead.
 "autocmd BufEnter * lcd %:p:h
