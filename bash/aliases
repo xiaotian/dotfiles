@@ -23,5 +23,5 @@ alias gd='git diff'
 alias gm='git merge'
 alias gup='git smart-pull'
 alias grb='git rebase'
-
-
+alias gst='git stash'
+alias gsp='git stash pop'
