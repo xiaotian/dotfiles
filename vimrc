@@ -212,3 +212,4 @@ fun! Trim()
 endfun
 
 command Trim :call Trim()
+command Q :qa
