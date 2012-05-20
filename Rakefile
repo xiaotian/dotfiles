@@ -2,8 +2,8 @@ require 'rake'
 require 'erb'
 
 desc "install the dot files into user's home directory"
-task :install do
-  replace_all = false
+task :install, :quiet do |t, args|
+  replace_all = args[:quiet] ||  false
   processed_os_files = []
   Dir['*'].each do |file|
     next if %w[Rakefile README.rdoc LICENSE].include? file

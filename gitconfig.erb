@@ -1,6 +1,13 @@
+<% 
+  def prompt_for(prompt)
+    print(prompt)
+    STDOUT.flush;
+    STDIN.gets.chomp
+  end
+%>
 [user]
-  name = <%= print("Your Name: "); STDOUT.flush; STDIN.gets.chomp %>
-  email = <%= print("Your Email: "); STDOUT.flush; STDIN.gets.chomp %>
+  name = <%= ENV['full_name'] || prompt_for("Your Name: ") %>
+  email = <%= ENV['email'] || prompt_for("Your Email: ") %>
 [alias]
   co = checkout
   ci = commit
@@ -28,5 +35,4 @@
 [format]
   pretty = %C(yellow)%h%Creset %s %C(red)(%cr)%Creset
 [github]
-  user = <%= print("GitHub Username: "); STDOUT.flush; STDIN.gets.chomp %>
-  token = <%= print("GitHub API Token: "); STDOUT.flush; STDIN.gets.chomp %>
+  user = <%= ENV['github_username'] || prompt_for("GitHub Username: ") %>
