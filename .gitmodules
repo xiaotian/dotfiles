@@ -73,3 +73,6 @@
 [submodule "vim/bundle/loremipsum"]
 	path = vim/bundle/loremipsum
 	url = https://github.com/vim-scripts/loremipsum.git
+[submodule "vim/bundle/snipmate-snippets"]
+	path = vim/bundle/snipmate-snippets
+	url = git://github.com/xiaotian/snipmate-snippets.git
