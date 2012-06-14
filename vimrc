@@ -72,6 +72,9 @@ set smartcase
 set wildmode=list:longest,list:full
 set wildignore+=*.o,*.obj,.git,*.rbc
 
+" snipmate
+let g:snippets_dir = "~/.dotfiles/vim/snippets"
+
 " Status bar
 set statusline=%<\ %n:%f\ %m%r%y\ [%{&ff}]%=%-35.(%l:%c\ %P(%L)\ \[0x%B]%)
 set laststatus=2
