@@ -27,3 +27,12 @@ alias gup='git smart-pull'
 alias grb='git rebase'
 alias gst='git stash'
 alias gsp='git stash pop'
+
+alias gtq='cd /Users/Xiaotian/Sites/code/projects/tequila'
+alias gru='cd /Users/Xiaotian/Sites/code/projects/reporting_ui'
+alias rc='bundle exec rails console'
+alias ars='touch tmp/restart.txt'
+
+alias pvp='post-review --guess-summary --guess-description -o --parent '
+alias pv='post-review --guess-summary --guess-description --parent origin/develop -o'
+
