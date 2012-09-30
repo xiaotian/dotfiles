@@ -9,15 +9,21 @@
   name = <%= ENV['full_name'] || prompt_for("Your Name: ") %>
   email = <%= ENV['email'] || prompt_for("Your Email: ") %>
 [alias]
+  ; to list: git config --get-regexp alias
   co = checkout
   ci = commit
-  l  = log --graph --pretty=format:'%C(cyan)%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%an, %cr)%Creset' --abbrev-commit --date=relative
+  l  = log --graph --date-order --pretty=format:'%C(cyan)%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%an, %cr)%Creset' --abbrev-commit --date=relative
   lp = log --patch --pretty=format:'%C(cyan)%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%an, %cr)%Creset' --abbrev-commit --date=relative
   ld = log --simplify-by-decoration --pretty=format:'%C(cyan)%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%an, %cr)%Creset' --abbrev-commit --date=relative
+  sw = show --pretty=full
+  ; -G: any commit the string is in diff
   lf = "!f() { git log -G $1 --pretty=format:'%C(cyan)%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%an, %cr)%Creset' --abbrev-commit --date=relative ; }; f"
+  ; -S: any commit the string is introduced or removed
   lff = "!f() { git log -S $1 --pretty=format:'%C(cyan)%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%an, %cr)%Creset' --abbrev-commit --date=relative ; }; f"
   s  = status --short
   ss = status
+  rbi = rebase -i
+  pi = pull --rebase
 [diff]
   tool = vimdiff
 [difftool]
@@ -33,6 +39,6 @@
 [apply]
   whitespace = nowarn
 [format]
-  pretty = %C(yellow)%h%Creset %s %C(red)(%cr)%Creset
+  pretty = %C(yellow)%h%Creset %s %C(red)(%an, %cr)%Creset
 [github]
   user = <%= ENV['github_username'] || prompt_for("GitHub Username: ") %>
