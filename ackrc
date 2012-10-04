@@ -4,3 +4,13 @@ ruby=.haml
 html=.haml
 --type-add
 css=.sass,.scss
+--type-add
+js=.ejs,.hamlc,.coffee
+
+--ignore-dir=vendor
+--ignore-dir=log
+--ignore-dir=tmp
+--ignore-dir=doc
+--ignore-dir=coverage
+--ignore-dir=public
+--ignore-dir=bin
