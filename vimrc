@@ -132,11 +132,6 @@ map <C-S-tab> :bp<CR>
 map! <C-tab> <C-O>:bn<CR>
 map! <C-S-tab> <C-O>:bp<CR>
 
-" Remember last location in file
-if has("autocmd")
-  au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
-    \| exe "normal g'\"" | endif
-endif
 
 function s:setupWrapping()
   set wrap
@@ -149,17 +144,24 @@ function s:setupMarkup()
   map <buffer> <Leader>p :Mm <CR>
 endfunction
 
+if has("autocmd")
+  " Remember last location in file
+  au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
+    \| exe "normal g'\"" | endif
+
+  au FileType make                                     set noexpandtab
+  au FileType python                                   set noexpandtab
+
+  " Thorfile, Rakefile and Gemfile are Ruby
+  au BufRead,BufNewFile {Gemfile,Rakefile,Thorfile,config.ru}    set ft=ruby
+
+  " md, markdown, and mk are markdown and define buffer-local preview
+  au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn} call s:setupMarkup()
+
+  au BufRead,BufNewFile *.txt call s:setupWrapping()
+  au BufRead,BufNewFile *.hamlc   set ft=haml
+endif
 " make and python use real tabs
-au FileType make                                     set noexpandtab
-au FileType python                                   set noexpandtab
-
-" Thorfile, Rakefile and Gemfile are Ruby
-au BufRead,BufNewFile {Gemfile,Rakefile,Thorfile,config.ru}    set ft=ruby
-
-" md, markdown, and mk are markdown and define buffer-local preview
-au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn} call s:setupMarkup()
-
-au BufRead,BufNewFile *.txt call s:setupWrapping()
 
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
