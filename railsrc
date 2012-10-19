@@ -12,13 +12,6 @@
   end
 end
 
-begin
-  require 'hirb' # sudo gem install cldwalker-hirb --source http://gems.github.com
-  Hirb.enable
-rescue LoadError
-  puts "some module isn't loaded"
-end
-
 def change_log(stream)
   ActiveRecord::Base.logger = Logger.new(stream)
   ActiveRecord::Base.clear_active_connections!
