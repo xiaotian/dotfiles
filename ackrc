@@ -8,6 +8,7 @@ css=.sass,.scss
 js=.ejs,.hamlc,.coffee
 
 --ignore-dir=vendor
+--ignore-dir=.jhw-cache
 --ignore-dir=log
 --ignore-dir=tmp
 --ignore-dir=doc
