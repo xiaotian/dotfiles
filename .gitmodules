@@ -76,9 +76,6 @@
 [submodule "vim/snippets"]
 	path = vim/snippets
 	url = https://github.com/xiaotian/snippets.git
-[submodule "vim/bundle/vim-jst"]
-	path = vim/bundle/vim-jst
-	url = git@github.com:xiaotian/vim-jst.git
 [submodule "vim/bundle/vim-scratch"]
 	path = vim/bundle/vim-scratch
 	url = https://github.com/duff/vim-scratch.git
