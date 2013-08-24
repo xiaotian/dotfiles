@@ -3,10 +3,10 @@
 " GUI-specific options, everything else should be in .vimrc
 
 if has("win32")
-    set guifont=monaco:h11
+    set guifont=monaco:h10
 elseif has("mac")
     " set guifont=Anonymous\ Pro:h14
-    set guifont=menlo:h12
+    set guifont=menlo:h10
 endif
 
 if has("gui_macvim")
