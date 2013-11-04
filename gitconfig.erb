@@ -12,22 +12,31 @@
   ; to list: git config --get-regexp alias
   co = checkout
   ci = commit
+  pl = pull --rebase
+  s  = status --short
+  ss = status
+  rbi = rebase -i
+  l1 = log --oneline
+  lf = log --pretty=full
   l  = log --graph --date-order --pretty=format:'%C(cyan)%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%an, %cr)%Creset' --abbrev-commit --date=relative
   lp = log --patch --pretty=format:'%C(cyan)%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%an, %cr)%Creset' --abbrev-commit --date=relative
   ld = log --simplify-by-decoration --pretty=format:'%C(cyan)%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%an, %cr)%Creset' --abbrev-commit --date=relative
   sw = show --pretty=full
-  ; -G: any commit the string is in diff
-  lf = "!f() { git log -G $1 --pretty=format:'%C(cyan)%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%an, %cr)%Creset' --abbrev-commit --date=relative ; }; f"
-  ; -S: any commit the string is introduced or removed
-  lff = "!f() { git log -S $1 --pretty=format:'%C(cyan)%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%an, %cr)%Creset' --abbrev-commit --date=relative ; }; f"
-  s  = status --short
-  ss = status
-  rbi = rebase -i
-  pl = pull --rebase
+  ;grep regex in diff
+  lg = "!f() { git log -G $1 --pretty=format:'%C(cyan)%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%an, %cr)%Creset' --abbrev-commit --date=relative ; }; f"
+
+  ;find commits where string is first introduced or removed
+  ls = "!f() { git log -S $1 --pretty=format:'%C(cyan)%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%an, %cr)%Creset' --abbrev-commit --date=relative ; }; f"
+
+  ;create a new working branch and track remote develop
+  wb = "!f() { git co develop && git pull --rebase && git co -b $1 && git branch -u origin/develop $1 ; }; f"
+
 [diff]
   tool = vimdiff
 [difftool]
   prompt = false
+[push]
+  default = simple
 [color]
   diff = auto
   status = auto
