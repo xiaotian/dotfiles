@@ -5,8 +5,8 @@
 if has("win32")
     set guifont=monaco:h10
 elseif has("mac")
-    " set guifont=Anonymous\ Pro:h14
-    set guifont=menlo:h10
+    set guifont=Anonymous\ Pro:h14
+    " set guifont=menlo:h11
 endif
 
 if has("gui_macvim")
