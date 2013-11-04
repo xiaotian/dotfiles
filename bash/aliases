@@ -28,13 +28,18 @@ alias grb='git rebase'
 alias gst='git stash'
 alias gsp='git stash pop'
 
+alias gp='cd /Users/Xiaotian/Sites/code/projects'
 alias gtq='cd /Users/Xiaotian/Sites/code/projects/tequila'
 alias gru='cd /Users/Xiaotian/Sites/code/projects/reporting_ui'
 alias rc='bundle exec rails console'
 alias ars='touch tmp/restart.txt'
 alias run_test='PROC_COUNT=6 bundle exec rake ci:tests'
-
+alias jasmine='bundle exec jasmine-headless-webkit --colors --no-full-run'
 alias pvp='post-review --guess-summary --guess-description -o --parent '
 alias pv='post-review --guess-summary --guess-description --parent origin/develop -o'
+alias pvm='post-review --guess-summary --guess-description --parent origin/master -o'
+
+alias issh='bundle exec iclassify-ssh'
 
 
+function psgrep() { ps -ef | grep -v grep | grep "$@" -i --color=auto; }
