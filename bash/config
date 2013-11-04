@@ -7,3 +7,5 @@ set -o vi
 
 #ruby ri settings:
 export PAGER=/usr/bin/less
+export SSL_CERT_FILE=/etc/cacert.pem
+export HISTFILESIZE=3000
