@@ -1,0 +1,13 @@
+
+set completion-ignore-case on
+
+TAB: menu-complete
+# use up/down left/right to navigate history based on current typed content
+"\e[A": history-search-backward
+"\e[B": history-search-forward
+"\e[C": forward-char
+"\e[D": backward-char
+
+$if Bash
+  Space: magic-space
+$endif
