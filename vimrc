@@ -160,6 +160,8 @@ if has("autocmd")
 
   au BufRead,BufNewFile *.txt call s:setupWrapping()
   au BufRead,BufNewFile *.hamlc   set ft=haml
+  autocmd FileType ruby,python,java,c,cpp,html,haml,javascript,coffee autocmd BufWritePre * :%s/\s\+$//e
+
 endif
 " make and python use real tabs
 
