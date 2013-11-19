@@ -27,7 +27,7 @@
 	url = https://github.com/tpope/vim-ragtag.git
 [submodule "vim/bundle/snipmate"]
 	path = vim/bundle/snipmate
-	url = https://github.com/msanders/snipmate.vim.git
+	url = https://github.com/ervandew/snipmate.vim.git
 [submodule "vim/bundle/ruby-matchit"]
 	path = vim/bundle/ruby-matchit
 	url = https://github.com/vim-scripts/ruby-matchit.git
