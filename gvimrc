@@ -1,11 +1,11 @@
 " .gvimrc is not read until all plugins have been loaded, by which time all the mappings
-" have already been created with the default map leader.  .gvimrc is intended only for 
+" have already been created with the default map leader.  .gvimrc is intended only for
 " GUI-specific options, everything else should be in .vimrc
 
 if has("win32")
     set guifont=monaco:h10
 elseif has("mac")
-    set guifont=Anonymous\ Pro:h14
+    set guifont=Anonymous\ Pro:h12
     " set guifont=menlo:h11
 endif
 
