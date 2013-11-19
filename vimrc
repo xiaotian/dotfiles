@@ -91,6 +91,13 @@ let g:user_zen_settings = {
 \ 'indentation' : '  '
 \}
 
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+
+map <leader>t :CtrlP<CR>
+map <leader>b :CtrlPBuffer<cr>
+map <leader>m :CtrlPMRU<cr>
+
 " Toggle paste mode on and off
 map <leader>pp :setlocal paste!<cr>
 
