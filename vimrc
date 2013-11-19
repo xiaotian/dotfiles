@@ -91,6 +91,20 @@ let g:user_zen_settings = {
 \ 'indentation' : '  '
 \}
 
+" Toggle paste mode on and off
+map <leader>pp :setlocal paste!<cr>
+
+" toggle between terminal and vim mouse
+map <leader>mm :let &mouse=(&mouse == "a"?"":"a")<CR>:call ShowMouseMode()<CR>
+"imap <silent><F12> :let &mouse=(&mouse == "a"?"":"a")<CR>:call ShowMouseMode()<CR>
+function ShowMouseMode()
+    if (&mouse == 'a')
+        echo "mouse-vim"
+    else
+        echo "mouse-xterm"
+    endif
+endfunction
+
 nmap <silent> <leader>b :MRU<CR>
 
 " Quickly edit/reload the vimrc file
