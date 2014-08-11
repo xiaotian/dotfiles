@@ -171,7 +171,6 @@ if has("autocmd")
     \| exe "normal g'\"" | endif
 
   au FileType make                                     set noexpandtab
-  au FileType python                                   set noexpandtab
 
   " Thorfile, Rakefile and Gemfile are Ruby
   au BufRead,BufNewFile {Gemfile,Rakefile,Thorfile,config.ru}    set ft=ruby
