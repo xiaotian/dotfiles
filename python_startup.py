@@ -6,10 +6,11 @@ import os
 import sys
 
 #  tab completion
-if(sys.platform == 'darwin'):
+if 'libedit' in readline.__doc__:
     readline.parse_and_bind("bind ^I rl_complete")
 else:
     readline.parse_and_bind("tab: complete")
+
 # history file
 histfile = os.path.join(os.environ['HOME'], '.pythonhistory')
 try:
