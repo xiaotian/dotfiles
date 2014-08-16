@@ -22,3 +22,5 @@ PROMPT_COMMAND='history -a'
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/Projects
 source /usr/local/bin/virtualenvwrapper.sh
+
+PYTHONSTARTUP=~/.dotfiles/python_startup.py
