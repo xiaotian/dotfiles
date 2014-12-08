@@ -16,3 +16,8 @@ export PYTHONSTARTUP=~/.pythonrc.py
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
+
+# stop terminal from handling ctrl-q and ctrl-s
+# we use ctrl-q in emmet.vim as leader key
+stty start undef
+stty stop undef

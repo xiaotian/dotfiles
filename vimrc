@@ -72,6 +72,13 @@ set smartcase
 set wildmode=list:longest,list:full
 set wildignore+=*.o,*.obj,.git,*.rbc
 
+" emmet leader key
+" if this isn't working, put
+" stty start undef
+" stty stop undef
+" in bashrc file
+let g:user_emmet_leader_key='<C-Q>'
+
 " snipmate
 let g:snippets_dir = "~/.dotfiles/vim/snippets"
 
@@ -84,12 +91,6 @@ set cpoptions+=$
 
 " Leaderkey
 let mapleader=","
-let g:user_zen_leader_key = '<c-z>'
-
-" zencoding indentation size
-let g:user_zen_settings = {
-\ 'indentation' : '  '
-\}
 
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
