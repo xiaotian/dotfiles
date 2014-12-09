@@ -75,6 +75,10 @@ let g:user_emmet_leader_key='<C-Q>'
 " snipmate
 let g:snippets_dir = "~/.dotfiles/vim/snippets"
 
+" enable syntastic linting for python.
+" with system python, do: 'pip install flake8'
+let g:syntastic_python_checkers=['pyflakes', 'python']
+
 " Status bar
 set statusline=%<\ %n:%f\ %m%r%y\ [%{&ff}]%=%-35.(%l:%c\ %P(%L)\ \[0x%B]%)
 set laststatus=2
