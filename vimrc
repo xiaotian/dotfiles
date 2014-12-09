@@ -164,11 +164,11 @@ function s:setupMarkup()
 endfunction
 
 function s:setColumnGuard()
-  " 80 column guard
+  " 100 column guard
   if exists('+colorcolumn')
-    set colorcolumn=80
+    set colorcolumn=100
   else
-    au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
+    au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>100v.\+', -1)
   endif
 endfunction
 
