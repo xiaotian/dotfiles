@@ -41,16 +41,9 @@ set nobackup
 set nowritebackup
 set noswapfile
 
-" Whitespace stuff
-if has("win32")
-  set tabstop=4
-  set shiftwidth=4
-  set softtabstop=4
-else
-  set tabstop=2
-  set shiftwidth=2
-  set softtabstop=2
-endif
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
 
 set expandtab
 set list listchars=tab:\ \ ,trail:.
@@ -166,6 +159,15 @@ function s:setupMarkup()
   map <buffer> <Leader>p :Mm <CR>
 endfunction
 
+function s:setColumnGuard()
+  " 80 column guard
+  if exists('+colorcolumn')
+    set colorcolumn=80
+  else
+    au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
+  endif
+endfunction
+
 if has("autocmd")
   " Remember last location in file
   au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
@@ -183,6 +185,8 @@ if has("autocmd")
   au BufRead,BufNewFile *.hamlc   set ft=haml
   au BufRead,BufNewFile *.py set tabstop=4 expandtab shiftwidth=4 softtabstop=4
   autocmd FileType ruby,python,java,c,cpp,html,haml,javascript,coffee autocmd BufWritePre * :%s/\s\+$//e
+  autocmd FileType python setlocal expandtab tabstop=4 softtabstop=4 shiftwidth=4
+  autocmd FileType python call s:setColumnGuard()
 
 endif
 " make and python use real tabs

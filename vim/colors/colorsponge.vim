@@ -396,6 +396,7 @@ hi link javaScriptRegexpString rubyRegexp
 
 " Tag list
 hi link TagListFileName Directory
+highlight ColorColumn ctermbg=235 guibg=#2c2d27
 
 " delete functions {{{
 delf s:X
