@@ -41,16 +41,9 @@ set nobackup
 set nowritebackup
 set noswapfile
 
-" Whitespace stuff
-if has("win32")
-  set tabstop=4
-  set shiftwidth=4
-  set softtabstop=4
-else
-  set tabstop=2
-  set shiftwidth=2
-  set softtabstop=2
-endif
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
 
 set expandtab
 set list listchars=tab:\ \ ,trail:.
@@ -72,8 +65,19 @@ set smartcase
 set wildmode=list:longest,list:full
 set wildignore+=*.o,*.obj,.git,*.rbc
 
+" emmet leader key
+" if this isn't working, put
+" stty start undef
+" stty stop undef
+" in bashrc file
+let g:user_emmet_leader_key='<C-Q>'
+
 " snipmate
 let g:snippets_dir = "~/.dotfiles/vim/snippets"
+
+" enable syntastic linting for python.
+" with system python, do: 'pip install flake8'
+let g:syntastic_python_checkers=['pyflakes', 'python']
 
 " Status bar
 set statusline=%<\ %n:%f\ %m%r%y\ [%{&ff}]%=%-35.(%l:%c\ %P(%L)\ \[0x%B]%)
@@ -84,12 +88,6 @@ set cpoptions+=$
 
 " Leaderkey
 let mapleader=","
-let g:user_zen_leader_key = '<c-z>'
-
-" zencoding indentation size
-let g:user_zen_settings = {
-\ 'indentation' : '  '
-\}
 
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
@@ -165,6 +163,15 @@ function s:setupMarkup()
   map <buffer> <Leader>p :Mm <CR>
 endfunction
 
+function s:setColumnGuard()
+  " 100 column guard
+  if exists('+colorcolumn')
+    set colorcolumn=100
+  else
+    au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>100v.\+', -1)
+  endif
+endfunction
+
 if has("autocmd")
   " Remember last location in file
   au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
@@ -182,6 +189,8 @@ if has("autocmd")
   au BufRead,BufNewFile *.hamlc   set ft=haml
   au BufRead,BufNewFile *.py set tabstop=4 expandtab shiftwidth=4 softtabstop=4
   autocmd FileType ruby,python,java,c,cpp,html,haml,javascript,coffee autocmd BufWritePre * :%s/\s\+$//e
+  autocmd FileType python setlocal expandtab tabstop=4 softtabstop=4 shiftwidth=4
+  autocmd FileType python call s:setColumnGuard()
 
 endif
 " make and python use real tabs

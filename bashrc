@@ -10,21 +10,22 @@ if [ -f ~/.localrc ]; then
 fi
 
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+#pyenv initialization
+if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
 
 # python stuff
-export PYTHONSTARTUP=~/.pythonrc.py
+export PYTHONSTARTUP=~/.python_startup.py
 
-# for building android facebook/phone app
-export ANDROID_HOME=/Users/tian/android-sdk
-export ANDROID_NDK=/Users/tian/android-ndk/android-ndk-r10e
-export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
 
-gvpn() {
-  sudo route -n change 192.168.1.0/24 -interface vboxnet1
-  sudo route -n delete 192.168.1.0/24 -interface vboxnet1
-  sudo route -n add 192.168.1.0/24 -interface vboxnet1
-}
+# set jdk/java version
+# http://stackoverflow.com/questions/21964709/how-to-change-default-java-version
+export JAVA_HOME='/Library/Java/JavaVirtualMachines/jdk1.7.0_79.jdk/Contents/Home'
 
-gvpnoff() {
-  sudo route -n delete 192.168.1.0/24 -interface vboxnet1
-}
+# stop terminal from handling ctrl-q and ctrl-s
+# we use ctrl-q in emmet.vim as leader key
+stty start undef
+stty stop undef
+
