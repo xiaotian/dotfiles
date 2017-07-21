@@ -3,30 +3,6 @@ alias reload='. ~/.bash_profile'
 
 alias serve="ruby -rwebrick -e\"s = WEBrick::HTTPServer.new(:Port => 8080, :DocumentRoot => Dir.pwd); trap('INT') { s.shutdown }; s.start\""
 
-#git alias
-alias ga='git add'
-alias gci='git commit'
-alias gco='git co'
-alias gpu='git push'
-alias grm='git rm'
-alias gmv='git mv'
-alias gl='git l'
-alias gld='git ld'
-alias glf='git lf'
-alias glff='git lff'
-alias glp='git lp'
-alias gs='git s'
-alias gss='git ss'
-alias grh='git reset --hard'
-alias grs='git reset --soft'
-alias gd='git diff'
-alias gdt='git difftool'
-alias gm='git merge --no-ff'
-alias gmf='git merge'
-alias gup='git smart-pull'
-alias grb='git rebase'
-alias gst='git stash'
-alias gsp='git stash pop'
 
 alias gp='cd /Users/Xiaotian/Sites/code/projects'
 alias gtq='cd /Users/Xiaotian/Sites/code/projects/tequila'
@@ -38,8 +14,21 @@ alias jasmine='bundle exec jasmine-headless-webkit --colors --no-full-run'
 alias pvp='post-review --guess-summary --guess-description -o --parent '
 alias pv='post-review --guess-summary --guess-description --parent origin/develop -o'
 alias pvm='post-review --guess-summary --guess-description --parent origin/master -o'
+alias hgbms='hg bms |sort -k2rn |head -7'
 
 alias issh='bundle exec iclassify-ssh'
 
 
 function psgrep() { ps -ef | grep -v grep | grep "$@" -i --color=auto; }
+
+
+alias bip="buck install phone"
+alias bbp="buck build phone"
+alias ins="scripts/open_inspector.sh -p com.facebook.phone"
+alias adb_phone="adb shell am start -D -n com.facebook.phone/com.facebook.phone.activities.PhoneMainActivity"
+
+alias msh="mosh -6 dev5846.prn2.facebook.com"
+alias mshv="mosh -6 devvm30448.prn1.facebook.com"
+
+
+alias pcom="picocom -l -b 115200 --omap crcrlf /dev/cu.wchusbserial1410"
